@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Learn making buttons and functions in python">
+    <title>Tkinter Buttons and Functions</title>
+    <link rel="stylesheet" href="../../css/tutorials.css">
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="../../../index.html">
+                <img src="../../imgs/icon.png" alt="How To Python" class="site-icon">
+            </a>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../tutorials.html" aria-current="page">Tutorials</a></li>
+                <li><a href="../other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h1>Tkinter: Buttons and Functions</h1>
+
+                <p>
+                    In this tutorial, you will learn how to create buttons,
+                    define functions, and make your Tkinter applications interactive.
+                </p>
+            </header>
+
+                <h2>1. What Is a Button?</h2>
+
+                <p>
+                    A button is a graphical element that the user can click
+                    to perform an action. In Tkinter, buttons are created
+                    using <code>Button()</code>.
+                </p>
+
+            <pre><code>import tkinter as tk
+
+window = tk.Tk()
+window.title("My Application")
+window.geometry("400x300")
+
+button = tk.Button(window, text="Click Me")
+button.pack()
+
+window.mainloop()</code></pre>
+
+            <h3>Understanding the Code</h3>
+
+            <p><code>import tkinter as tk</code></p>
+            <p>
+                Imports the Tkinter library and gives it the shorter name
+                <code>tk</code>. This lets us write <code>tk.Button()</code>
+                instead of <code>tkinter.Button()</code>.
+            </p>
+
+            <p><code>window = tk.Tk()</code></p>
+            <p>
+                Creates the main application window. All the widgets,
+                such as buttons and labels, will be placed inside this window.
+            </p>
+
+            <p><code>window.title("My Application")</code></p>
+            <p>
+                Sets the text displayed in the window's title bar.
+            </p>
+
+            <p><code>window.geometry("400x300")</code></p>
+            <p>
+                Sets the window size to 400 pixels wide and 300 pixels tall.
+                The format is <code>"widthxheight"</code>.
+            </p>
+
+            <p><code>button = tk.Button(window, text="Click Me")</code></p>
+            <p>
+                Creates a button inside <code>window</code>.
+                The <code>text</code> parameter defines the words shown
+                on the button.
+            </p>
+
+            <p><code>button.pack()</code></p>
+            <p>
+                Places the button in the window. Without a geometry manager
+                such as <code>pack()</code>, the button will not appear.
+            </p>
+
+            <p><code>window.mainloop()</code></p>
+            <p>
+                Starts Tkinter's event loop. It keeps the window open
+                and waits for user actions, such as clicks.
+            </p>
+
+            <h2>2. What Is a Function?</h2>
+
+            <p>
+                A function is a reusable block of code that performs
+                a specific task. In Python, functions are defined with
+                the <code>def</code> keyword.
+            </p>
+
+            <pre><code>def say_hello():
+    print("Hello, world!")
+
+say_hello()</code></pre>
+
+            <h3>Understanding the Code</h3>
+
+            <p><code>def</code></p>
+            <p>
+                Tells Python that you are defining a function.
+            </p>
+
+            <p><code>say_hello</code></p>
+            <p>
+                Is the function's name. You choose a name that describes
+                what the function does.
+            </p>
+
+            <p><code>()</code></p>
+            <p>
+                The parentheses can contain parameters, which allow a
+                function to receive information. Here, they are empty.
+            </p>
+
+            <p><code>:</code></p>
+            <p>
+                The colon marks the beginning of the function body.
+                The indented lines below it belong to the function.
+            </p>
+
+            <p><code>print("Hello, world!")</code></p>
+            <p>
+                Displays the text in the Python console when the function runs.
+            </p>
+
+            <p><code>say_hello()</code></p>
+            <p>
+                Calls the function. Defining a function does not execute it
+                automatically; you must call it.
+            </p>
+
+            <h2>3. Connecting a Button to a Function</h2>
+
+            <p>
+                The <code>command</code> parameter connects a button to
+                a function. When the user clicks the button, Tkinter
+                calls that function.
+            </p>
+
+            <pre><code>import tkinter as tk
+
+def say_hello():
+    print("Hello, world!")
+
+window = tk.Tk()
+window.title("Button Example")
+window.geometry("400x300")
+
+button = tk.Button(
+    window,
+    text="Say Hello",
+    command=say_hello
+)
+
+button.pack(pady=20)
+
+window.mainloop()</code></pre>
+
+            <h3>Understanding the Code</h3>
+
+            <p><code>def say_hello():</code></p>
+            <p>
+                Defines the function that will run when the button is clicked.
+            </p>
+
+            <p><code>command=say_hello</code></p>
+            <p>
+                Tells Tkinter which function to call when the button is pressed.
+                Notice that there are no parentheses after
+                <code>say_hello</code>.
+            </p>
+
+            <p>
+                Writing <code>command=say_hello()</code> would call the
+                function immediately while creating the button, rather
+                than passing the function for a future click.
+            </p>
+
+            <p><code>button.pack(pady=20)</code></p>
+            <p>
+                Places the button in the window and adds 20 pixels of
+                vertical padding around it.
+            </p>
+
+            <h2>4. Changing a Label with a Button</h2>
+
+            <p>
+                A button can change something inside the window instead
+                of only printing text in the console. For example, it
+                can update a label.
+            </p>
+
+            <pre><code>import tkinter as tk
+
+def change_text():
+    label.config(text="The button was clicked!")
+
+window = tk.Tk()
+window.title("Changing Text")
+window.geometry("400x300")
+
+label = tk.Label(window, text="Click the button below")
+label.pack(pady=20)
+
+button = tk.Button(
+    window,
+    text="Change Text",
+    command=change_text
+)
+
+button.pack()
+
+window.mainloop()</code></pre>
+
+            <h3>Understanding the Code</h3>
+
+            <p><code>label = tk.Label(window, text="Click the button below")</code></p>
+            <p>
+                Creates a label, which is a widget used to display text
+                inside the window.
+            </p>
+
+            <p><code>label.config(text="The button was clicked!")</code></p>
+            <p>
+                Updates the label's text. The <code>config()</code> method
+                can change a widget's options after it has been created.
+            </p>
+
+            <p>
+                When the button is clicked, Tkinter calls
+                <code>change_text()</code>, and the label displays
+                the new message.
+            </p>
+
+            <h2>5. Functions with Parameters</h2>
+
+            <p>
+                Parameters let a function receive information. This makes
+                the same function useful for different values.
+            </p>
+
+            <pre><code>def greet(name):
+    print("Hello, " + name + "!")
+
+greet("Alex")
+greet("Sam")</code></pre>
+
+            <p>The output will be:</p>
+
+            <pre><code>Hello, Alex!
+Hello, Sam!</code></pre>
+
+            <h3>Understanding the Code</h3>
+
+            <p><code>name</code></p>
+            <p>
+                Is a parameter. It receives the value passed when the
+                function is called.
+            </p>
+
+            <p><code>greet("Alex")</code></p>
+            <p>
+                Calls the function with <code>"Alex"</code> as the argument.
+                Inside the function, <code>name</code> contains that text.
+            </p>
+
+            <h2>6. Passing Arguments to a Button</h2>
+
+            <p>
+                Tkinter normally calls a button's <code>command</code>
+                function without arguments. To pass a value, you can
+                use <code>lambda</code>.
+            </p>
+
+            <pre><code>import tkinter as tk
+
+def greet(name):
+    label.config(text="Hello, " + name + "!")
+
+window = tk.Tk()
+window.title("Greeting App")
+window.geometry("400x300")
+
+label = tk.Label(window, text="Click a button")
+label.pack(pady=20)
+
+button = tk.Button(
+    window,
+    text="Greet Alex",
+    command=lambda: greet("Alex")
+)
+
+button.pack()
+
+window.mainloop()</code></pre>
+
+            <h3>What Is Lambda?</h3>
+
+            <p>
+                <code>lambda</code> creates a small anonymous function.
+                In this example, it waits for the button click before
+                calling <code>greet("Alex")</code>.
+            </p>
+
+            <p>
+                Without <code>lambda</code>, calling
+                <code>greet("Alex")</code> directly in the
+                <code>command</code> parameter would execute the function
+                immediately.
+            </p>
+
+            <h2>7. Customizing Buttons</h2>
+
+            <p>
+                Tkinter buttons have parameters that control their
+                appearance, including background color, text color,
+                font, and size.
+            </p>
+
+            <pre><code>import tkinter as tk
+
+window = tk.Tk()
+window.title("Custom Button")
+window.geometry("400x300")
+
+button = tk.Button(
+    window,
+    text="Start",
+    bg="#2463a6",
+    fg="white",
+    font=("Arial", 12),
+    width=15,
+    height=2
+)
+
+button.pack(pady=30)
+
+window.mainloop()</code></pre>
+
+            <h3>Understanding the Parameters</h3>
+
+            <p><code>bg="#2463a6"</code></p>
+            <p>Sets the button's background color.</p>
+
+            <p><code>fg="white"</code></p>
+            <p>Sets the button text color.</p>
+
+            <p><code>font=("Arial", 12)</code></p>
+            <p>
+                Sets the font family to Arial and the font size to 12.
+            </p>
+
+            <p><code>width=15</code></p>
+            <p>Sets the button width in text units.</p>
+
+            <p><code>height=2</code></p>
+            <p>Sets the button height in text units.</p>
+
+            <h2>8. Common Button Parameters</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>text</code></td>
+                        <td>Sets the text displayed on the button.</td>
+                    </tr>
+                    <tr>
+                        <td><code>command</code></td>
+                        <td>Specifies the function called when clicked.</td>
+                    </tr>
+                    <tr>
+                        <td><code>bg</code></td>
+                        <td>Sets the background color.</td>
+                    </tr>
+                    <tr>
+                        <td><code>fg</code></td>
+                        <td>Sets the text color.</td>
+                    </tr>
+                    <tr>
+                        <td><code>font</code></td>
+                        <td>Sets the font family and size.</td>
+                    </tr>
+                    <tr>
+                        <td><code>width</code></td>
+                        <td>Sets the button width.</td>
+                    </tr>
+                    <tr>
+                        <td><code>height</code></td>
+                        <td>Sets the button height.</td>
+                    </tr>
+                    <tr>
+                        <td><code>state</code></td>
+                        <td>Controls whether the button is enabled or disabled.</td>
+                    </tr>
+                    <tr>
+                        <td><code>padx</code></td>
+                        <td>Adds horizontal internal padding.</td>
+                    </tr>
+                    <tr>
+                        <td><code>pady</code></td>
+                        <td>Adds vertical internal padding.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>9. Practice Exercise</h2>
+
+            <p>Create a window with the following elements:</p>
+
+            <ol>
+                <li>A label displaying "Welcome!".</li>
+                <li>A button named "Change Message".</li>
+                <li>A function that changes the label to "Hello from Tkinter!" when clicked.</li>
+            </ol>
+
+            <p>
+                Try to write the code yourself before looking at the
+                examples again. This is a good way to practice functions
+                and button callbacks.
+            </p>
+
+            <h2>10. Summary</h2>
+
+            <ul>
+                <li><code>Button()</code> creates a clickable button.</li>
+                <li><code>def</code> defines a function.</li>
+                <li><code>command</code> connects a button to a function.</li>
+                <li><code>config()</code> changes a widget's properties.</li>
+                <li><code>lambda</code> helps pass arguments to a callback.</li>
+                <li><code>Label()</code> displays text in a window.</li>
+            </ul>
+
+            <hr>
+
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>How To Python</p>
+        <p>Learn Python step by step.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditions and Comparisons - How To Python</title>
+    <link rel="stylesheet" href="../../css/tutorials.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">
+                <img src="../../imgs/icon.png" alt="How To Python" class="site-icon">
+            </a>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../tutorials.html" aria-current="page">Tutorials</a></li>
+                <li><a href="../other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+
+            <h1>Python Basics: Conditions and Comparisons</h1>
+            <p>Learn how to make Python choose what to do based on conditions.</p>
+
+            <h2>1. What Is a Condition?</h2>
+            <p>A condition is an expression that evaluates to either <code>True</code> or <code>False</code>. Python can use it to decide which code should run.</p>
+
+            <pre><code>age = 18
+
+if age >= 18:
+    print("You are an adult.")</code></pre>
+
+            <h3>Understanding the Code</h3>
+            <p><code>age = 18</code> stores the number 18 in a variable.</p>
+            <p><code>if</code> begins a conditional statement.</p>
+            <p><code>age >= 18</code> checks whether age is greater than or equal to 18.</p>
+            <p>The colon (<code>:</code>) marks the beginning of the block, and indentation identifies the code inside it.</p>
+            <p><code>print()</code> runs only if the condition is true.</p>
+
+            <h2>2. Comparison Operators</h2>
+            <table>
+                <thead>
+                    <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>==</code></td><td>Equal to</td><td><code>5 == 5</code> is True</td></tr>
+                    <tr><td><code>!=</code></td><td>Not equal to</td><td><code>5 != 3</code> is True</td></tr>
+                    <tr><td><code>&gt;</code></td><td>Greater than</td><td><code>8 &gt; 4</code> is True</td></tr>
+                    <tr><td><code>&lt;</code></td><td>Less than</td><td><code>2 &lt; 4</code> is True</td></tr>
+                    <tr><td><code>&gt;=</code></td><td>Greater than or equal to</td><td><code>5 &gt;= 5</code> is True</td></tr>
+                    <tr><td><code>&lt;=</code></td><td>Less than or equal to</td><td><code>3 &lt;= 5</code> is True</td></tr>
+                </tbody>
+            </table>
+
+            <h2>3. Using else</h2>
+            <p>The <code>else</code> block runs when the <code>if</code> condition is false.</p>
+
+            <pre><code>temperature = 12
+
+if temperature > 20:
+    print("It is warm.")
+else:
+    print("It is cold.")</code></pre>
+
+            <p>Because 12 is not greater than 20, Python prints <code>It is cold.</code></p>
+
+            <h2>4. Using elif</h2>
+            <p><code>elif</code> means "else if". It lets you check another condition when the earlier condition was false.</p>
+
+            <pre><code>score = 75
+
+if score >= 90:
+    print("Grade A")
+elif score >= 70:
+    print("Grade B")
+else:
+    print("Grade C")</code></pre>
+
+            <p>Python checks the conditions from top to bottom. Here, the result is <code>Grade B</code>.</p>
+
+            <h2>5. Combining Conditions</h2>
+            <p>You can combine multiple conditions using <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+
+            <pre><code>age = 20
+has_ticket = True
+
+if age >= 18 and has_ticket:
+    print("Access allowed.")
+
+if age < 18 or not has_ticket:
+    print("Access denied.")</code></pre>
+
+            <ul>
+                <li><code>and</code> requires both conditions to be true.</li>
+                <li><code>or</code> requires at least one condition to be true.</li>
+                <li><code>not</code> reverses a Boolean value.</li>
+            </ul>
+
+            <h2>6. Checking Text</h2>
+            <p>Conditions can also compare strings.</p>
+
+            <pre><code>password = "python"
+
+if password == "python":
+    print("Correct text.")
+else:
+    print("Incorrect text.")</code></pre>
+
+            <p>String comparisons are case-sensitive, so <code>"Python"</code> and <code>"python"</code> are different strings.</p>
+
+            <h2>7. Indentation Matters</h2>
+            <p>Python uses indentation to identify which statements belong to a condition.</p>
+
+            <pre><code>number = 10
+
+if number > 5:
+    print("This line is inside the if block.")
+
+print("This line runs afterward.")</code></pre>
+
+            <p>The first message appears only if the condition is true. The second message runs regardless of that condition.</p>
+
+            <h2>Practice</h2>
+            <ol>
+                <li>Create a variable called <code>number</code>.</li>
+                <li>Use <code>if</code> to check whether it is positive.</li>
+                <li>Use <code>else</code> to handle the other case.</li>
+                <li>Use <code>elif</code> to check whether the number is zero.</li>
+            </ol>
+
+            <h2>Summary</h2>
+            <ul>
+                <li><code>if</code> checks a condition.</li>
+                <li><code>elif</code> checks another condition.</li>
+                <li><code>else</code> handles the remaining case.</li>
+                <li>Comparison operators compare values.</li>
+                <li><code>and</code>, <code>or</code>, and <code>not</code> combine or reverse conditions.</li>
+            </ul>
+
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>How To Python</p>
+        <p>Learn Python step by step.</p>
+    </footer>
+
+</body>
+</html>

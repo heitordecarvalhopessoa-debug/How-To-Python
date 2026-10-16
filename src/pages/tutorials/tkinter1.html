@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the basics of Python Tkinter, including windows, customization, colors, and labels.">
+    <title>Tkinter Basics</title>
+    <link rel="stylesheet" href="../../css/tutorials.css">
+</head>
+<body>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="../../../index.html">
+                <img src="../../imgs/icon.png" alt="How To Python" class="site-icon">
+            </a>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../tutorials.html" aria-current="page">Tutorials</a></li>
+                <li><a href="../other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h1>Use Tkinter</h1>
+
+                <p>
+                    Learn how to create desktop windows with Python,
+                    customize their appearance, and display text using labels.
+                </p>
+            </header>
+
+            <section>
+                <h2>1. What Is Tkinter?</h2>
+
+                <p>
+                    Tkinter is a Python library used to create graphical
+                    user interfaces (GUIs). It allows you to build desktop
+                    applications with windows and visual elements.
+                </p>
+
+                <p>With Tkinter, you can create:</p>
+
+                <ul>
+                    <li>Application windows.</li>
+                    <li>Text labels.</li>
+                    <li>Buttons.</li>
+                    <li>Input fields.</li>
+                    <li>Menus and other interface elements.</li>
+                </ul>
+
+                <p>
+                    Tkinter is usually included with Python. If it is missing,
+                    you may need to install the appropriate package for your
+                    operating system.
+                </p>
+            </section>
+
+            <section>
+                <h2>2. Importing Tkinter</h2>
+
+                <p>
+                    Before using Tkinter, you need to import the library
+                    into your Python program.
+                </p>
+
+                <pre><code>import tkinter as tk</code></pre>
+
+                <h3>Understanding the Code</h3>
+
+                <ul>
+                    <li>
+                        <code>import</code> tells Python to load a module
+                        or library.
+                    </li>
+                    <li>
+                        <code>tkinter</code> is the name of the library
+                        we want to use.
+                    </li>
+                    <li>
+                        <code>as tk</code> gives the library a shorter
+                        name, making the code easier to write.
+                    </li>
+                </ul>
+
+                <p>
+                    After importing it, you can use <code>tk</code> to
+                    access Tkinter features.
+                </p>
+            </section>
+
+            <section>
+                <h2>3. Creating Your First Window</h2>
+
+                <p>
+                    Every basic Tkinter application starts by creating
+                    a main window.
+                </p>
+
+                <pre><code>import tkinter as tk
+
+window = tk.Tk()
+
+window.mainloop()</code></pre>
+
+                <h3>Understanding the Code</h3>
+
+                <h4><code>window = tk.Tk()</code></h4>
+
+                <p>This line creates the main application window.</p>
+
+                <ul>
+                    <li>
+                        <code>window</code> is the variable that stores
+                        the window object.
+                    </li>
+                    <li>
+                        <code>=</code> assigns the created object
+                        to the variable.
+                    </li>
+                    <li>
+                        <code>tk.Tk()</code> creates the main Tkinter
+                        application window.
+                    </li>
+                </ul>
+
+                <h4><code>window.mainloop()</code></h4>
+
+                <p>
+                    This starts Tkinter's event loop. It keeps the window
+                    running and allows the application to respond to
+                    user interactions.
+                </p>
+            </section>
+
+            <section>
+                <h2>4. Customizing the Window</h2>
+
+                <p>
+                    Tkinter provides several methods for changing a
+                    window's title, size, background color, and dimensions.
+                </p>
+
+                <h3>4.1. Changing the Window Title</h3>
+
+                <pre><code>window.title("My Application")</code></pre>
+
+                <p>
+                    The <code>title()</code> method sets the text displayed
+                    in the window's title bar.
+                </p>
+
+                <h3>4.2. Changing the Window Size</h3>
+
+                <pre><code>window.geometry("800x500")</code></pre>
+
+                <p>
+                    The <code>geometry()</code> method sets the initial
+                    window dimensions.
+                </p>
+
+                <ul>
+                    <li><code>800</code> is the width in pixels.</li>
+                    <li><code>500</code> is the height in pixels.</li>
+                </ul>
+
+                <p>You can also specify the initial screen position:</p>
+
+                <pre><code>window.geometry("800x500+100+50")</code></pre>
+
+                <p>
+                    The last two numbers specify the approximate horizontal
+                    and vertical position of the window.
+                </p>
+
+                <h3>4.3. Changing the Background Color</h3>
+
+                <pre><code>window.configure(bg="black")</code></pre>
+
+                <p>
+                    The <code>configure()</code> method changes properties
+                    of the window. The <code>bg</code> parameter means
+                    background color.
+                </p>
+
+                <p>You can use named colors:</p>
+
+                <pre><code>window.configure(bg="white")
+window.configure(bg="black")
+window.configure(bg="red")
+window.configure(bg="blue")
+window.configure(bg="green")</code></pre>
+
+                <p>You can also use hexadecimal color codes:</p>
+
+                <pre><code>window.configure(bg="#20242b")</code></pre>
+
+                <p>
+                    Hexadecimal colors let you choose more specific shades,
+                    such as dark gray, blue, or green.
+                </p>
+
+                <h3>4.4. Disabling Window Resizing</h3>
+
+                <pre><code>window.resizable(False, False)</code></pre>
+
+                <p>
+                    The <code>resizable()</code> method controls whether
+                    the user can resize the window.
+                </p>
+
+                <ul>
+                    <li>The first value controls the width.</li>
+                    <li>The second value controls the height.</li>
+                    <li><code>False</code> disables resizing.</li>
+                    <li><code>True</code> allows resizing.</li>
+                </ul>
+
+                <h3>4.5. Setting the Minimum Size</h3>
+
+                <pre><code>window.minsize(400, 300)</code></pre>
+
+                <p>
+                    This sets the minimum window size to 400 pixels wide
+                    and 300 pixels tall.
+                </p>
+
+                <h3>4.6. Setting the Maximum Size</h3>
+
+                <pre><code>window.maxsize(1200, 800)</code></pre>
+
+                <p>
+                    This sets the maximum window size to 1200 pixels wide
+                    and 800 pixels tall.
+                </p>
+            </section>
+
+            <section>
+                <h2>5. Adding a Label</h2>
+
+                <p>
+                    A <code>Label</code> is a Tkinter widget used to display
+                    text or an image inside a window.
+                </p>
+
+                <pre><code>import tkinter as tk
+
+window = tk.Tk()
+
+window.title("My Application")
+window.geometry("600x400")
+window.configure(bg="black")
+
+text = tk.Label(
+    window,
+    text="Hello, world!",
+    font=("Arial", 20),
+    fg="white",
+    bg="black"
+)
+
+text.pack()
+
+window.mainloop()</code></pre>
+
+                <h3>Understanding the Label</h3>
+
+                <h4><code>tk.Label()</code></h4>
+
+                <p>Creates a new Label widget.</p>
+
+                <h4><code>window</code></h4>
+
+                <p>
+                    Specifies the parent window where the Label will
+                    be displayed.
+                </p>
+
+                <h4><code>text="Hello, world!"</code></h4>
+
+                <p>Defines the text displayed by the Label.</p>
+
+                <h4><code>font=("Arial", 20)</code></h4>
+
+                <p>
+                    Sets the font family to Arial and the font size to 20.
+                </p>
+
+                <h4><code>fg="white"</code></h4>
+
+                <p>
+                    Sets the text color. The abbreviation <code>fg</code>
+                    means foreground.
+                </p>
+
+                <h4><code>bg="black"</code></h4>
+
+                <p>Sets the Label's background color.</p>
+
+                <h4><code>text.pack()</code></h4>
+
+                <p>
+                    The <code>pack()</code> method places the Label inside
+                    the window using Tkinter's layout system.
+                </p>
+            </section>
+
+            <section>
+                <h2>6. Positioning a Label</h2>
+
+                <p>
+                    The <code>pack()</code> method has options for
+                    positioning widgets and adding spacing.
+                </p>
+
+                <h3>Default Position</h3>
+
+                <pre><code>text.pack()</code></pre>
+
+                <p>
+                    By default, the widget is placed horizontally centered
+                    in the available area, following the order in which
+                    widgets are packed.
+                </p>
+
+                <h3>Placing the Label at the Top</h3>
+
+                <pre><code>text.pack(side="top")</code></pre>
+
+                <h3>Placing the Label at the Bottom</h3>
+
+                <pre><code>text.pack(side="bottom")</code></pre>
+
+                <h3>Adding Spacing</h3>
+
+                <pre><code>text.pack(pady=20, padx=10)</code></pre>
+
+                <ul>
+                    <li><code>pady=20</code> adds vertical spacing.</li>
+                    <li><code>padx=10</code> adds horizontal spacing.</li>
+                </ul>
+
+                <p>
+                    These spacing values are measured in pixels.
+                </p>
+            </section>
+
+            <section>
+                <h2>7. Further Label Customization</h2>
+
+                <h3>7.1. Changing the Text Color</h3>
+
+                <pre><code>text = tk.Label(
+    window,
+    text="Colored Text",
+    fg="yellow",
+    bg="#20242b"
+)
+
+text.pack()</code></pre>
+
+                <h3>7.2. Using a Larger Font</h3>
+
+                <pre><code>text = tk.Label(
+    window,
+    text="Application Title",
+    font=("Arial", 28, "bold")
+)
+
+text.pack()</code></pre>
+
+                <p>
+                    The <code>"bold"</code> option makes the text bold.
+                    You can also use <code>"italic"</code> for italic text.
+                </p>
+
+                <h3>7.3. Aligning Text to the Left</h3>
+
+                <pre><code>text = tk.Label(
+    window,
+    text="Text aligned to the left",
+    anchor="w",
+    width=35
+)
+
+text.pack()</code></pre>
+
+                <p>
+                    The <code>anchor</code> parameter controls the position
+                    of the content inside the Label's available area.
+                </p>
+
+                <ul>
+                    <li><code>"w"</code>: left.</li>
+                    <li><code>"e"</code>: right.</li>
+                    <li><code>"center"</code>: center.</li>
+                    <li><code>"n"</code>: top.</li>
+                    <li><code>"s"</code>: bottom.</li>
+                </ul>
+
+                <p>
+                    The <code>width</code> option is measured in text units,
+                    not necessarily pixels.
+                </p>
+            </section>
+
+            <section>
+                <h2>8. Complete Example</h2>
+
+                <p>
+                    Now let's combine everything into one complete program.
+                </p>
+
+                <pre><code>import tkinter as tk
+
+window = tk.Tk()
+
+window.title("My First Application")
+window.geometry("700x450")
+window.configure(bg="#20242b")
+window.resizable(False, False)
+
+title = tk.Label(
+    window,
+    text="My First Application",
+    font=("Arial", 24, "bold"),
+    fg="white",
+    bg="#20242b"
+)
+
+title.pack(pady=30)
+
+description = tk.Label(
+    window,
+    text="This window was created with Python and Tkinter.",
+    font=("Arial", 12),
+    fg="#c5cbd3",
+    bg="#20242b"
+)
+
+description.pack(pady=10)
+
+information = tk.Label(
+    window,
+    text="Learning to create graphical interfaces.",
+    font=("Arial", 10, "italic"),
+    fg="#7ccba2",
+    bg="#20242b"
+)
+
+information.pack(pady=5)
+
+window.mainloop()</code></pre>
+
+                <h3>What Does This Program Do?</h3>
+
+                <ol>
+                    <li>Imports Tkinter.</li>
+                    <li>Creates the main window.</li>
+                    <li>Sets the title and window size.</li>
+                    <li>Changes the background color.</li>
+                    <li>Disables window resizing.</li>
+                    <li>Creates three Labels with different styles.</li>
+                    <li>Arranges the text using <code>pack()</code>.</li>
+                    <li>Starts the event loop.</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>9. Command Reference</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Command</th>
+                            <th>Purpose</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><code>import tkinter as tk</code></td>
+                            <td>Imports the library.</td>
+                        </tr>
+                        <tr>
+                            <td><code>tk.Tk()</code></td>
+                            <td>Creates the main window.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.title()</code></td>
+                            <td>Sets the window title.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.geometry()</code></td>
+                            <td>Sets the window size and optional position.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.configure()</code></td>
+                            <td>Changes window properties.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.resizable()</code></td>
+                            <td>Controls window resizing.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.minsize()</code></td>
+                            <td>Sets the minimum window size.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.maxsize()</code></td>
+                            <td>Sets the maximum window size.</td>
+                        </tr>
+                        <tr>
+                            <td><code>tk.Label()</code></td>
+                            <td>Creates a text or image widget.</td>
+                        </tr>
+                        <tr>
+                            <td><code>text.pack()</code></td>
+                            <td>Places a widget in the interface.</td>
+                        </tr>
+                        <tr>
+                            <td><code>window.mainloop()</code></td>
+                            <td>Runs the interface event loop.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section>
+                <h2>10. Running Your Program</h2>
+
+                <ol>
+                    <li>Install Python if you have not already.</li>
+                    <li>Open a code editor, such as Visual Studio Code.</li>
+                    <li>Create a file named <code>main.py</code>.</li>
+                    <li>Copy the complete example into the file.</li>
+                    <li>Open a terminal in the directory containing the file.</li>
+                </ol>
+
+                <p>Run the program with:</p>
+
+                <pre><code>python main.py</code></pre>
+
+                <p>
+                    On Windows, you can also try:
+                </p>
+
+                <pre><code>py main.py</code></pre>
+
+                <p>
+                    If Python reports that Tkinter is missing, check whether
+                    your Python installation includes the Tkinter package.
+                </p>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>What's Next?</h2>
+
+                <p>
+                    You now know how to create and customize a Tkinter
+                    window and display text with Labels.
+                </p>
+
+                <p>
+                    Continue learning Python and explore more tutorials
+                    to develop your programming skills.
+                </p>
+
+                <a href="../tutorials.html">Back to Tutorials</a>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>How To Python</p>
+        <p>Learn Python step by step.</p>
+    </footer>
+
+</body>
+</html>

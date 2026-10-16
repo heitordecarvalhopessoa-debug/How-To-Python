@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops - How To Python</title>
+    <link rel="stylesheet" href="../../css/tutorials.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">
+                <img src="../../imgs/icon.png" alt="How To Python" class="site-icon">
+            </a>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../tutorials.html" aria-current="page">Tutorials</a></li>
+                <li><a href="../other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+
+            <h1>Python Basics: Loops</h1>
+            <p>Learn how to repeat instructions using Python's <code>for</code> and <code>while</code> loops.</p>
+
+            <h2>1. What Is a Loop?</h2>
+            <p>A loop repeats a block of code. Loops are useful when you want to perform the same task multiple times without writing the same instructions repeatedly.</p>
+
+            <h2>2. The for Loop</h2>
+            <p>A <code>for</code> loop can repeat an action for each item in a sequence.</p>
+
+            <pre><code>for number in range(5):
+    print(number)</code></pre>
+
+            <h3>Understanding the Code</h3>
+            <p><code>for</code> begins the loop.</p>
+            <p><code>number</code> is the variable that receives each value during the loop.</p>
+            <p><code>range(5)</code> produces the numbers 0, 1, 2, 3, and 4.</p>
+            <p><code>print(number)</code> displays the current value on each repetition.</p>
+
+            <p>The output is:</p>
+            <pre><code>0
+1
+2
+3
+4</code></pre>
+
+            <h2>3. Understanding range()</h2>
+            <p>The built-in <code>range()</code> function creates a sequence of integers. The ending value is excluded.</p>
+
+            <pre><code>for number in range(1, 6):
+    print(number)</code></pre>
+
+            <p>This prints the numbers from 1 to 5. The first argument is the starting value, and the second is the stopping value.</p>
+
+            <p>You can also specify a step:</p>
+
+            <pre><code>for number in range(0, 10, 2):
+    print(number)</code></pre>
+
+            <p>The output is 0, 2, 4, 6, and 8. The third argument tells Python to increase the number by 2 each time.</p>
+
+            <h2>4. Looping Through a String</h2>
+            <p>A string is a sequence of characters, so a <code>for</code> loop can visit each character.</p>
+
+            <pre><code>word = "Python"
+
+for letter in word:
+    print(letter)</code></pre>
+
+            <p>Each repetition assigns the next character to <code>letter</code>.</p>
+
+            <h2>5. The while Loop</h2>
+            <p>A <code>while</code> loop repeats as long as its condition remains true.</p>
+
+            <pre><code>count = 1
+
+while count <= 5:
+    print(count)
+    count = count + 1</code></pre>
+
+            <h3>Understanding the Code</h3>
+            <p><code>count = 1</code> sets the initial value.</p>
+            <p><code>while count <= 5:</code> repeats the block while count is less than or equal to 5.</p>
+            <p><code>print(count)</code> displays the current number.</p>
+            <p><code>count = count + 1</code> increases count by one each time.</p>
+
+            <p>Updating <code>count</code> allows the condition to eventually become false. Without an appropriate update, the loop could run forever.</p>
+
+            <h2>6. Using break</h2>
+            <p>The <code>break</code> statement immediately ends the loop.</p>
+
+            <pre><code>for number in range(10):
+    if number == 5:
+        break
+
+    print(number)</code></pre>
+
+            <p>The loop stops when number reaches 5, so the output contains 0 through 4.</p>
+
+            <h2>7. Using continue</h2>
+            <p>The <code>continue</code> statement skips the rest of the current repetition and moves to the next one.</p>
+
+            <pre><code>for number in range(5):
+    if number == 2:
+        continue
+
+    print(number)</code></pre>
+
+            <p>The number 2 is skipped, so the output is 0, 1, 3, and 4.</p>
+
+            <h2>8. Nested Loops</h2>
+            <p>A nested loop is a loop inside another loop.</p>
+
+            <pre><code>for row in range(3):
+    for column in range(2):
+        print(row, column)</code></pre>
+
+            <p>For every value of <code>row</code>, the inner loop visits both values of <code>column</code>.</p>
+
+            <h2>9. for vs. while</h2>
+            <table>
+                <thead>
+                    <tr><th>Loop</th><th>Best used for</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>for</code></td>
+                        <td>Iterating through a sequence or a known range of values.</td>
+                    </tr>
+                    <tr>
+                        <td><code>while</code></td>
+                        <td>Repeating while a condition remains true.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Practice</h2>
+            <ol>
+                <li>Use a <code>for</code> loop to print numbers from 1 to 10.</li>
+                <li>Use a <code>while</code> loop to count from 5 down to 1.</li>
+                <li>Print every character in your name.</li>
+                <li>Use <code>continue</code> to skip one number in a loop.</li>
+            </ol>
+
+            <h2>Summary</h2>
+            <ul>
+                <li><code>for</code> repeats over a sequence.</li>
+                <li><code>range()</code> generates a sequence of integers.</li>
+                <li><code>while</code> repeats while a condition is true.</li>
+                <li><code>break</code> ends a loop.</li>
+                <li><code>continue</code> skips to the next repetition.</li>
+            </ul>
+
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>How To Python</p>
+        <p>Learn Python step by step.</p>
+    </footer>
+
+</body>
+</html>
