@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Data Types - How To Python</title>
+    <link rel="stylesheet" href="../../css/tutorials.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">
+                <img src="../../imgs/icon.png" alt="How To Python" class="site-icon">
+            </a>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../tutorials.html" aria-current="page">Tutorials</a></li>
+                <li><a href="../other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+
+            <h1>Python Basics: Variables and Data Types</h1>
+            <p>Learn how to store information and work with different types of data in Python.</p>
+
+            <h2>1. What Is a Variable?</h2>
+            <p>A variable is a name used to store a value. You can create one by writing its name, followed by an equals sign and a value.</p>
+
+            <pre><code>name = "Alex"
+age = 15
+is_learning = True
+
+print(name)
+print(age)
+print(is_learning)</code></pre>
+
+            <h3>Understanding the Code</h3>
+            <p><code>name = "Alex"</code> creates a variable named <code>name</code> and stores the text <code>"Alex"</code>.</p>
+            <p><code>age = 15</code> stores the integer number <code>15</code>.</p>
+            <p><code>is_learning = True</code> stores a Boolean value, which can be either <code>True</code> or <code>False</code>.</p>
+            <p><code>print()</code> displays a value in the console.</p>
+
+            <h2>2. Strings</h2>
+            <p>A string is text written between quotation marks.</p>
+
+            <pre><code>first_name = "Alex"
+message = 'Hello!'
+print(first_name)
+print(message)</code></pre>
+
+            <p>You can use single or double quotation marks to create strings. The opening and closing quotation marks must match.</p>
+
+            <h2>3. Numbers</h2>
+            <p>Python supports integers and floating-point numbers.</p>
+
+            <pre><code>apples = 5
+price = 2.50
+
+print(apples)
+print(price)</code></pre>
+
+            <p><code>5</code> is an integer (<code>int</code>). The value <code>2.50</code> is a floating-point number (<code>float</code>).</p>
+
+            <h2>4. Basic Math</h2>
+            <p>You can use Python to perform mathematical operations.</p>
+
+            <pre><code>a = 10
+b = 3
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+print(a // b)
+print(a % b)
+print(a ** b)</code></pre>
+
+            <table>
+                <thead>
+                    <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>+</code></td><td>Addition</td><td><code>10 + 3 = 13</code></td></tr>
+                    <tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 3 = 7</code></td></tr>
+                    <tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 3 = 30</code></td></tr>
+                    <tr><td><code>/</code></td><td>Division</td><td><code>10 / 3</code> gives a decimal result</td></tr>
+                    <tr><td><code>//</code></td><td>Floor division</td><td><code>10 // 3 = 3</code></td></tr>
+                    <tr><td><code>%</code></td><td>Remainder</td><td><code>10 % 3 = 1</code></td></tr>
+                    <tr><td><code>**</code></td><td>Exponentiation</td><td><code>10 ** 3 = 1000</code></td></tr>
+                </tbody>
+            </table>
+
+            <h2>5. Joining Text</h2>
+            <p>You can combine strings using the <code>+</code> operator.</p>
+
+            <pre><code>name = "Alex"
+print("Hello, " + name + "!")</code></pre>
+
+            <p>Output: <code>Hello, Alex!</code></p>
+
+            <p>You can also use an f-string, which lets you insert variable values inside text.</p>
+
+            <pre><code>name = "Alex"
+age = 15
+
+print(f"My name is {name} and I am {age}.")</code></pre>
+
+            <p>Put the letter <code>f</code> before the quotation mark and place variable names inside curly braces.</p>
+
+            <h2>6. Checking Data Types</h2>
+            <p>The built-in <code>type()</code> function tells you the type of a value.</p>
+
+            <pre><code>print(type("Hello"))
+print(type(10))
+print(type(2.5))
+print(type(True))</code></pre>
+
+            <p>The results correspond to <code>str</code>, <code>int</code>, <code>float</code>, and <code>bool</code>.</p>
+
+            <h2>Practice</h2>
+            <ol>
+                <li>Create a variable named <code>city</code> and store a city name.</li>
+                <li>Create two number variables and print their sum.</li>
+                <li>Use an f-string to display a message containing a variable.</li>
+            </ol>
+
+            <h2>Summary</h2>
+            <ul>
+                <li>Variables store values.</li>
+                <li>Strings store text.</li>
+                <li>Integers and floats store numbers.</li>
+                <li>Booleans represent <code>True</code> or <code>False</code>.</li>
+                <li><code>print()</code> displays information.</li>
+            </ul>
+
+            <a href="../tutorials.html" class="back-link">&larr; Back to Tutorials</a>
+        </article>
+    </main>
+
+    <footer>
+        <p>How To Python</p>
+        <p>Learn Python step by step.</p>
+    </footer>
+
+</body>
+</html>
